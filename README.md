@@ -1,2 +1,2 @@
 # learn
-My Personal study notes.
+My personal study notes.
