@@ -47,3 +47,18 @@ sudo docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
+免sudo使用docker，[参见官方](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)（可选）
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+重启电脑，输入如下命令验证：
+```
+docker run hello-world
+```
+如果命令正常运行，代表设置成功
+
+设置开机启动docker：（可选）
+```
+sudo systemctl enable docker
+```
