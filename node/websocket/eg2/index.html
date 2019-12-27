@@ -1,0 +1,16 @@
+<script src="./socket.io.js"></script>
+<script>
+  var chat = io.connect('http://localhost:8080/chat', { transports: ['websocket'] })
+    , news = io.connect('http://localhost:8080/news', { transports: ['websocket'] });
+
+  chat.on('connect', function () {
+    console.log('connect chat');
+  });
+  chat.on('chat_msg', function (msg) {
+    console.log('chat_msg:', msg);
+  });
+
+  news.on('news_msg', function (msg) {
+    console.log('news_msg:', msg);
+  });
+</script>

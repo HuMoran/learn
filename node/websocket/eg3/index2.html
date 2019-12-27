@@ -1,0 +1,12 @@
+<script src="./socket.io.js"></script>
+<script>
+  const chat = io.connect('http://localhost:8080/chat', { transports: ['websocket'], query: { sex: 'woman'} });
+
+  chat.on('connect', function () {
+    console.log('woman', chat.id);
+  });
+  chat.on('chat', function (msg) {
+    console.log('chat:', msg);
+  });
+
+</script>
